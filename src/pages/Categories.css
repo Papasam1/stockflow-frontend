@@ -1,0 +1,24 @@
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.cat-card {
+  background: var(--white);
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cat-card:hover {
+  background: var(--butter);
+  border-color: #f0e78a;
+  transform: translateY(-1px);
+}
+
+.cat-icon  { font-size: 2rem; margin-bottom: 10px; }
+.cat-name  { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+.cat-count { color: var(--medium-text); font-size: 0.8rem; }

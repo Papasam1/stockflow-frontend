@@ -1,0 +1,26 @@
+.settings-section {
+  background: var(--white);
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.settings-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-gray);
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-gray);
+}
+.settings-row:last-child { border-bottom: none; }
+
+.settings-label { font-size: 0.9rem; font-weight: 500; }
+.settings-desc  { font-size: 0.78rem; color: var(--medium-text); }

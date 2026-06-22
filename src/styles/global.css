@@ -1,0 +1,141 @@
+/* ── CSS VARIABLES ── */
+:root {
+  --primary-blue: #1E40AF;
+  --primary-light: #2563EB;
+  --primary-dark: #1e3a8a;
+  --success-green: #16A34A;
+  --accent-gold: #D4A017;
+  --danger-red: #DC2626;
+  --butter: #FFF4B8;
+  --white: #FFFFFF;
+  --light-gray: #F5F7FA;
+  --border-gray: #E5E7EB;
+  --dark-text: #1F2937;
+  --medium-text: #6B7280;
+  --sidebar-width: 220px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--light-gray);
+  color: var(--dark-text);
+}
+
+/* ── BUTTONS ── */
+.btn {
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-primary { background: var(--primary-blue); color: var(--white); }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary { background: var(--white); color: var(--dark-text); border: 1.5px solid var(--border-gray); }
+.btn-secondary:hover { border-color: var(--primary-blue); color: var(--primary-blue); }
+.btn-gold { background: var(--accent-gold); color: var(--primary-dark); }
+.btn-danger { background: #FEF2F2; color: var(--danger-red); border: 1px solid #FECACA; }
+.btn-sm { padding: 5px 12px; font-size: 0.78rem; }
+
+/* ── BADGES ── */
+.badge { padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; display: inline-block; }
+.badge-green { background: #DCFCE7; color: #15803D; }
+.badge-gold  { background: #FEF9C3; color: #92400E; }
+.badge-red   { background: #FEE2E2; color: #B91C1C; }
+.badge-blue  { background: #DBEAFE; color: #1D4ED8; }
+
+/* ── FORMS ── */
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--dark-text); margin-bottom: 6px; }
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-gray);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border 0.15s;
+}
+.form-group input:focus,
+.form-group select:focus { border-color: var(--primary-blue); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* ── TABLE ── */
+.table-card { background: var(--white); border: 1px solid var(--border-gray); border-radius: 12px; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; }
+thead { background: var(--light-gray); }
+th {
+  padding: 11px 16px;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--medium-text);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid var(--border-gray);
+}
+td {
+  padding: 13px 16px;
+  font-size: 0.875rem;
+  color: var(--dark-text);
+  border-bottom: 1px solid var(--border-gray);
+  vertical-align: middle;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #FAFBFC; }
+
+/* ── PAGE HEADER ── */
+.page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.page-header h2 { font-size: 1.25rem; font-weight: 700; }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px 32px;
+  width: 480px;
+  max-width: 95vw;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+.modal h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; }
+.modal-footer { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+
+/* ── EMPTY STATE ── */
+.empty-state { text-align: center; padding: 60px 20px; color: var(--medium-text); }
+.empty-state .empty-icon { font-size: 3rem; margin-bottom: 12px; }
+.empty-state p { font-size: 0.9rem; }
+
+/* ── TOGGLE ── */
+.toggle {
+  width: 42px; height: 24px;
+  background: var(--border-gray);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.toggle.on { background: var(--primary-blue); }
+.toggle::after {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  background: white;
+  border-radius: 50%;
+  top: 3px; left: 3px;
+  transition: left 0.2s;
+}
+.toggle.on::after { left: 21px; }
